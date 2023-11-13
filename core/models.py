@@ -19,5 +19,5 @@ class Prox(models.Model):
 
 class ProxyLister(models.Model):
 
-    url = models.CharField()
+    url = models.CharField(max_length=200)
     

@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from datetime import date, datetime
 from django.contrib.auth.hashers import make_password
+from .scrap.free_proxy import get_free_proxy
 
 
 
@@ -18,4 +19,12 @@ from django.shortcuts import render
 def home(request):
     return HttpResponse('Hello World!')
 
+
+
+def vw_free_proxy(request):
+
+    data = get_free_proxy()
+
+    return HttpResponse(data)
+    
 

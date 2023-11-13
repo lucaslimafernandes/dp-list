@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 def get_free_proxy():
 
+    data = []
     try:
 
         url = "https://www.freeproxy.world/?speed=144"
@@ -32,7 +33,6 @@ def get_free_proxy():
 
         print(table)
 
-        data = []
         for row in table.find_all('tr')[1:]:
             # Extraia as células da linha
             cells = row.find_all('td')
@@ -49,6 +49,8 @@ def get_free_proxy():
     
     except Exception as e:
         print(f"Erro ao se conectar ao site: {str(e)}")
+    
+    return data
 
 # print(data)
 
