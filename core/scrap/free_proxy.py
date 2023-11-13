@@ -49,8 +49,37 @@ def get_free_proxy():
     
     except Exception as e:
         print(f"Erro ao se conectar ao site: {str(e)}")
+
     
-    return data
+    # ip_address = models.CharField(max_length=39)
+    # port = models.IntegerField()
+    # protocol = models.CharField(max_length=20) 
+    # country = models.CharField(max_length=30)
+    # latency = models.CharField(max_length=10)
+    # request = models.IntegerField()
+    # status_ok = models.IntegerField()
+
+    response_list = []
+    for i in data:
+        try:
+
+            if i['IP adress'] == '0.0.0.0':
+                raise Exception()
+            if i['Port'] == '':
+                raise Exception()
+
+            response = {
+                'ip_address': i['IP adress'] ,
+                'port': i['Port'] ,
+                'protocol': i['Type'] ,
+                'country': i['Country'] ,
+                'latency': i['Speed'] ,
+            }
+            response_list.append(response)
+        except (KeyError, Exception):
+            pass
+
+    return response_list
 
 # print(data)
 
