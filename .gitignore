@@ -1,6 +1,7 @@
 ## Local private
 .migrations
 migrations/
+static/
 
 
 # Byte-compiled / optimized / DLL files

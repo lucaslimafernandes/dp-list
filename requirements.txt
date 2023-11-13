@@ -1,3 +1,4 @@
 django
 requests
 beautifulsoup4
+django-adminlte3
